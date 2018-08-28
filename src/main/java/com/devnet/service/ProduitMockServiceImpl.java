@@ -16,9 +16,7 @@ public class ProduitMockServiceImpl implements IProduitService {
 		produits=new ArrayList<Produit>();
 	    
 
-	    produits.add(new Produit("Livre",50,25.5f));
-	    produits.add(new Produit("Cahier",150,15.5f));
-	    produits.add(new Produit("Stylo",500,5.5f));
+	    
 	}
 
 	@Override
@@ -41,9 +39,9 @@ public class ProduitMockServiceImpl implements IProduitService {
 	}
 
 	@Override
-	public void deletProduit(String ref) {
+	public void deleteProduit(Long id) {
 		Produit produit=new Produit();
-		produit.setRef(ref);
+		produit.setId(id);
 		produits.remove(produit);
 
 	}

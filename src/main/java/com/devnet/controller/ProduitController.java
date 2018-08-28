@@ -1,4 +1,4 @@
-package com.devnet.service;
+package com.devnet.controller;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devnet.entities.Produit;
+import com.devnet.service.IProduitService;
 
 @RestController
 @RequestMapping("/api/produits")
@@ -37,9 +38,9 @@ public class ProduitController {
 		produitService.updateProduit(produit);
 	}
 	
-	@DeleteMapping("/{ref}")
-	public void delete(@PathVariable String ref) {
-		produitService.deletProduit(ref);
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id) {
+		produitService.deleteProduit(id);
 	}
 	
 

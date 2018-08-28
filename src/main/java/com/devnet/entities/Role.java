@@ -1,65 +1,31 @@
 package com.devnet.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Produit {
 
+
+@Entity
+public class Role {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ROLE_ID")
 	private Long id;
-	private String ref;
 	
-	private int quantite;
-	
-	private float prixUnitaire;
+	private String name;
 
-	public Produit() {
+	public Role() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Produit(String ref, int quantite, float prixUnitaire) {
+	public Role(com.devnet.util.RoleEnum role) {
 		super();
-		this.ref = ref;
-		this.quantite = quantite;
-		this.prixUnitaire = prixUnitaire;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getRef() {
-		return ref;
-	}
-
-	public void setRef(String ref) {
-		this.ref = ref;
-	}
-
-	public int getQuantite() {
-		return quantite;
-	}
-
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
-	}
-
-	public float getPrixUnitaire() {
-		return prixUnitaire;
-	}
-
-	public void setPrixUnitaire(float prixUnitaire) {
-		this.prixUnitaire = prixUnitaire;
+		this.name = role.getName();
 	}
 
 	@Override
@@ -78,7 +44,7 @@ public class Produit {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produit other = (Produit) obj;
+		Role other = (Role) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -87,6 +53,20 @@ public class Produit {
 		return true;
 	}
 
-	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

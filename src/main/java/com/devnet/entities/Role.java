@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+import com.devnet.util.RoleEnum;
 
 @Entity
 public class Role {
@@ -23,7 +23,7 @@ public class Role {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Role(com.devnet.util.RoleEnum role) {
+	public Role(RoleEnum role) {
 		super();
 		this.name = role.getName();
 	}

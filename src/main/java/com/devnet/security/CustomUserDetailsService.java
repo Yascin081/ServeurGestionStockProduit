@@ -16,8 +16,6 @@ import com.devnet.entities.Role;
 import com.devnet.entities.User;
 import com.devnet.repository.UserRepository;
 
-
-
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
 

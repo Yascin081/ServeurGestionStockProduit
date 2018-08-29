@@ -8,10 +8,10 @@ import javax.persistence.Id;
 @Entity
 public class Produit {
 
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
 	private String ref;
 	
 	private int quantite;
@@ -28,14 +28,6 @@ public class Produit {
 		this.ref = ref;
 		this.quantite = quantite;
 		this.prixUnitaire = prixUnitaire;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getRef() {
@@ -62,6 +54,14 @@ public class Produit {
 		this.prixUnitaire = prixUnitaire;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -86,7 +86,6 @@ public class Produit {
 			return false;
 		return true;
 	}
-
 	
-
+	
 }
